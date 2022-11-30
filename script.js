@@ -21,7 +21,7 @@ console.log( document.querySelector('.guess').value);
 // events video 73, game logic video74, video 75 manipulation of CSS, coding challenge 1, High-score video 77
 let secretNumber = Math.trunc(Math.random()*20)+1;
 let score = 20;
-
+let max=0;
 
 
 document.querySelector('.again').addEventListener('click', function(){
@@ -68,12 +68,18 @@ console.log(secretNumber)
             document.querySelector('body').style.backgroundColor = '#60b347';
             document.querySelector('.number').style.width = '30rem';
             document.querySelector('.number').textContent = secretNumber;
-         
-            let max=0;
+         //adding the Highscore functionality when Again button is clicked
+            
   if(max<score){
     max = score;
+    document.querySelector(".highscore").textContent = max;
   }
-  document.querySelector(".highscore").textContent = max;
+  else if(max>score){
+    max = max;
+    document.querySelector(".highscore").textContent = max;
+  }
+  
+  
             }
             
         
@@ -110,6 +116,12 @@ console.log(secretNumber)
     
     });
 //===================================
+
+
+
+
+
+
 
 
 
