@@ -24,19 +24,7 @@ let score = 20;
 
 
 
-
-
-//the whole game
-document.querySelector('.check').addEventListener(`click`, function () {
-    const guess = Number(document.querySelector('.guess').value);
-console.log(secretNumber)
-//high-score value
-
-
-
-
-//Again! button functionality coding challenge
- document.querySelector('.again').addEventListener('click', function(){
+document.querySelector('.again').addEventListener('click', function(){
     score =20;
     document.querySelector('.score').textContent = score;
     document.querySelector('.message').textContent = "Start guessing...";
@@ -45,10 +33,27 @@ console.log(secretNumber)
      Number(document.querySelector('.guess').value=" ");
      document.querySelector('.number').style.width = '15rem';
      document.querySelector('.number').textContent = "?";
-    
-
-    
  });
+ 
+ 
+ 
+
+
+
+
+
+//the whole game
+document.querySelector('.check').addEventListener(`click`, function () {
+    const guess = Number(document.querySelector('.guess').value);
+    
+console.log(secretNumber)
+//high-score value
+
+
+
+
+//Again! button functionality coding challenge
+ 
     //code along * I   did a lot myself*
     console.log(guess, typeof guess);
 
@@ -64,7 +69,11 @@ console.log(secretNumber)
             document.querySelector('.number').style.width = '30rem';
             document.querySelector('.number').textContent = secretNumber;
          
-        
+            let max=0;
+  if(max<score){
+    max = score;
+  }
+  document.querySelector(".highscore").textContent = max;
             }
             
         
